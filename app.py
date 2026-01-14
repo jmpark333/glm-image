@@ -89,7 +89,6 @@ with st.sidebar:
     # API Key info
     st.markdown("""
     **📖 API Key 발급 방법**<br><br>
-
     1️⃣ [https://z.ai](https://z.ai) 방문<br>
     2️⃣ 회원가입 (무료)<br>
     3️⃣ 마이페이지 → API Keys → 발급<br>
