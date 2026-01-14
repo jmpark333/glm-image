@@ -68,10 +68,6 @@ st.markdown(
 
 # Sidebar - API Key Configuration
 with st.sidebar:
-    try:
-        st.image("https://z.ai/favicon.ico", width=80)
-    except:
-        st.markdown("### 🎨")
     st.title("⚙️ 설정")
 
     # API Key input
