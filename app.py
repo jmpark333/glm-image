@@ -172,20 +172,20 @@ with col1:
         ```
         A beautifully designed recipe card for chocolate cake,
         with title 'Chocolate Cake Recipe', ingredient list on the left,
-        step-by-step instructions on the right, magazine style
+        step-by-step instructions on the right, magazine style in English
         ```
 
         **3. PPT 슬라이드**
         ```
         A professional business presentation slide about AI technology,
         with title area, bullet points, and a simple chart illustration,
-        clean and modern corporate style
+        clean and modern corporate style in English
         ```
 
         **4. 인포그래픽**
         ```
         An infographic explaining climate change, with icons, text labels,
-        and data visualizations, educational style with clear typography
+        and data visualizations, educational style with clear typography in English
         ```
         """)
 
