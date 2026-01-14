@@ -274,10 +274,15 @@ if generate_btn:
                             try:
                                 st.image(image_url, use_container_width=True)
 
-                                # Create download button that uses the base URL
+                                # Download the actual image content
+                                img_response = requests.get(image_url, timeout=30)
+                                img_response.raise_for_status()
+                                img_content = img_response.content
+
+                                # Create download button with actual image content
                                 st.download_button(
                                     label=f"📥 이미지 {i + 1} 다운로드",
-                                    data=image_url,
+                                    data=img_content,
                                     file_name=f"glm_image_{i + 1}.png",
                                     mime="image/png",
                                     use_container_width=True,
@@ -287,8 +292,9 @@ if generate_btn:
 
                             except Exception as e:
                                 st.error(
-                                    f"이미지 표시 중 오류가 발생했습니다: {str(e)}"
+                                    f"이미지 처리 중 오류가 발생했습니다: {str(e)}"
                                 )
+                                st.markdown("---")
 
                         # Show prompt used
                         with st.expander("📝 사용된 프롬프트"):
