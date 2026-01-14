@@ -245,7 +245,7 @@ if generate_btn:
                         "Content-Type": "application/json",
                     },
                     json={"model": "glm-image", "prompt": prompt, "size": size, "n": n},
-                    timeout=120,
+                    timeout=300,  # Increased timeout to 5 minutes
                 )
 
                 # Check response
