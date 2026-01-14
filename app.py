@@ -88,13 +88,13 @@ with st.sidebar:
 
     # API Key info
     st.markdown("""
-    **📖 API Key 발급 방법**
+    **📖 API Key 발급 방법**<br><br>
 
-    1️⃣ [https://z.ai](https://z.ai) 방문
-    2️⃣ 회원가입 (무료)
-    3️⃣ 마이페이지 → API Keys → 발급
+    1️⃣ [https://z.ai](https://z.ai) 방문<br>
+    2️⃣ 회원가입 (무료)<br>
+    3️⃣ 마이페이지 → API Keys → 발급<br>
     4️⃣ 발급된 키를 위에 입력하세요
-    """)
+    """, unsafe_allow_html=True)
 
     st.markdown("---")
 
