@@ -87,36 +87,32 @@ with st.sidebar:
     st.markdown("---")
 
     # API Key info
-    st.markdown("""
-    <div class="warning-box">
-        <b>📖 API Key 발급 방법</b><br><br>
-        1. <a href="https://z.ai" target="_blank">https://z.ai</a> 방문<br>
-        2. 회원가입 (무료)<br>
-        3. 마이페이지 → API Keys → 발급<br>
-        4. 발급된 키를 위에 입력하세요
-    </div>
-    """, unsafe_allow_html=True)
+    st.info("""
+    **📖 API Key 발급 방법**
+
+    1️⃣ [https://z.ai](https://z.ai) 방문
+    2️⃣ 회원가입 (무료)
+    3️⃣ 마이페이지 → API Keys → 발급
+    4️⃣ 발급된 키를 위에 입력하세요
+    """)
 
     st.markdown("---")
 
     # Model info
     st.markdown("### 📚 GLM-Image 정보")
     st.markdown("""
-    <div class="info-box">
-        <b>GLM-Image</b>는 Z.AI가 개발한 하이브리드 이미지 생성 모델입니다.<br><br>
+    **GLM-Image**는 Z.AI가 개발한 하이브리드 이미지 생성 모델입니다.
 
-        🔹 <b>강점</b>: 텍스트 렌더링, 복잡한 레이아웃<br>
-        🔹 <b>아키텍처</b>: Auto-regressive + Diffusion<br>
-        🔹 <b>용도</b>: 포스터, PPT, 인포그래픽 등
-    </div>
-    """, unsafe_allow_html=True)
+    - 🔹 **강점**: 텍스트 렌더링, 복잡한 레이아웃
+    - 🔹 **아키텍처**: Auto-regressive + Diffusion
+    - 🔹 **용도**: 포스터, PPT, 인포그래픽 등
+    """)
 
     st.markdown("---")
-    st.markdown("""
-    <div style="text-align: center; color: #666;">
-        <small>Made with ❤️ by <a href="https://github.com/jmpark333" target="_blank">jmpark333</a></small>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown(
+        "<div style='text-align: center; color: #666;'>Made with ❤️ by <a href='https://github.com/jmpark333' target='_blank'>jmpark333</a></div>",
+        unsafe_allow_html=True
+    )
 
 # Main content
 st.markdown("""
