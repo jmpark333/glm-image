@@ -274,26 +274,28 @@ if generate_btn:
                             try:
                                 st.image(image_url, use_container_width=True)
 
-                                # Download the actual image content with headers
-                                headers = {
-                                    "Authorization": f"Bearer {api_key}",
-                                    "User-Agent": "Mozilla/5.0",
-                                }
-                                img_response = requests.get(
-                                    image_url, headers=headers, timeout=30
-                                )
-                                img_response.raise_for_status()
-                                img_content = img_response.content
-
-                                # Create download button with actual image content
-                                st.download_button(
-                                    label=f"📥 이미지 {i + 1} 다운로드",
-                                    data=img_content,
-                                    file_name=f"glm_image_{i + 1}.png",
-                                    mime="image/png",
-                                    use_container_width=True,
+                                # Create download button that shows the URL for manual download
+                                st.markdown(
+                                    f"""
+                                    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                                        <p><strong>수동 다운로드 방법:</strong></p>
+                                        <p>1. 오른쪽 이미지를 마우스 오른쪽 클릭</p>
+                                        <p>2. "이미지 저장" 또는 "이미지 다운로드" 선택</p>
+                                        <p>3. 파일 저장 위치 선택</p>
+                                    </div>
+                                    """,
+                                    unsafe_allow_html=True,
                                 )
 
+                                # Also provide the direct URL for copy-paste
+                                st.code(image_url, language="")
+
+                                st.markdown("---")
+
+                            except Exception as e:
+                                st.error(
+                                    f"이미지 처리 중 오류가 발생했습니다: {str(e)}"
+                                )
                                 st.markdown("---")
 
                             except Exception as e:
