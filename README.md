@@ -107,6 +107,7 @@ zai_api_key = "zai_xxxxxxxxxxxxxxxx"
 A modern sale event poster with '50% OFF' in bold text at the center,
 clean design, vibrant colors, professional quality
 ```
+![상업용 포스터 예제](50.jfif)
 
 **레시피 카드**
 ```
@@ -114,6 +115,7 @@ A beautifully designed recipe card for chocolate cake,
 with title 'Chocolate Cake Recipe', ingredient list on the left,
 step-by-step instructions on the right, magazine style
 ```
+![레시피 카드 예제](chc.jfif)
 
 **PPT 슬라이드**
 ```
@@ -121,6 +123,7 @@ A professional business presentation slide about AI technology,
 with title area, bullet points, and a simple chart illustration,
 clean and modern corporate style
 ```
+![PPT 슬라이드 예제](ai.jfif)
 
 ## 🛠️ 기술 스택
 
