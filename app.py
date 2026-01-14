@@ -68,7 +68,10 @@ st.markdown(
 
 # Sidebar - API Key Configuration
 with st.sidebar:
-    st.image("https://z.ai/favicon.ico", width=80)
+    try:
+        st.image("https://z.ai/favicon.ico", width=80)
+    except:
+        st.markdown("### 🎨")
     st.title("⚙️ 설정")
 
     # API Key input
@@ -236,7 +239,7 @@ if generate_btn:
         )
     else:
         # Show loading
-        with st.spinner("🎨 이미지 생성 중... (약 10~30초 소요)"):
+        with st.spinner("🎨 이미지 생성 중... (약 30~60초 소요)"):
             try:
                 # API call
                 response = requests.post(
@@ -246,7 +249,7 @@ if generate_btn:
                         "Content-Type": "application/json",
                     },
                     json={"model": "glm-image", "prompt": prompt, "size": size, "n": n},
-                    timeout=60,
+                    timeout=120,
                 )
 
                 # Check response
@@ -311,11 +314,12 @@ if generate_btn:
 
                     else:
                         st.markdown(
-                            """
+                            f"""
                         <div class="warning-box">
                             <b>⚠️ 이미지 생성 실패</b><br>
                             응답에서 이미지 데이터를 찾을 수 없습니다.<br>
-                            API 크레딧이 충분한지 확인해주세요.
+                            API 크레딧이 충분한지 확인해주세요.<br><br>
+                            응답 데이터: {result}
                         </div>
                         """,
                             unsafe_allow_html=True,
