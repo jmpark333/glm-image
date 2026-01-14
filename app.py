@@ -272,7 +272,11 @@ if generate_btn:
 
                             # Download and display image
                             try:
-                                img_response = requests.get(image_url, timeout=30)
+                                img_response = requests.get(
+                                    image_url,
+                                    headers={"Authorization": f"Bearer {api_key}"},
+                                    timeout=30,
+                                )
                                 if img_response.status_code == 200:
                                     img = Image.open(BytesIO(img_response.content))
                                     st.image(img, use_container_width=True)
