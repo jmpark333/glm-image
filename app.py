@@ -294,13 +294,7 @@ if generate_btn:
 
                             except Exception as e:
                                 st.error(
-                                    f"이미지 처리 중 오류가 발생했습니다: {str(e)}"
-                                )
-                                st.markdown("---")
-
-                            except Exception as e:
-                                st.error(
-                                    f"이미지 처리 중 오류가 발생했습니다: {str(e)}"
+                                    f"이미지 표시 중 오류가 발생했습니다: {str(e)}"
                                 )
                                 st.markdown("---")
 
