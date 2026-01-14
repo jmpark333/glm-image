@@ -267,15 +267,21 @@ if generate_btn:
                         for i, img_data in enumerate(result["data"]):
                             st.markdown(f"### 🖼️ 이미지 {i + 1}")
 
-                            # Extract base URL without query parameters
-                            image_url = img_data["url"].split("?")[0]
+                            # Use the full URL with query parameters
+                            image_url = img_data["url"]
 
-                            # Display image using the base URL
+                            # Display image using the full URL
                             try:
                                 st.image(image_url, use_container_width=True)
 
-                                # Download the actual image content
-                                img_response = requests.get(image_url, timeout=30)
+                                # Download the actual image content with headers
+                                headers = {
+                                    "Authorization": f"Bearer {api_key}",
+                                    "User-Agent": "Mozilla/5.0",
+                                }
+                                img_response = requests.get(
+                                    image_url, headers=headers, timeout=30
+                                )
                                 img_response.raise_for_status()
                                 img_content = img_response.content
 
