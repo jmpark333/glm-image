@@ -267,27 +267,17 @@ if generate_btn:
                         for i, img_data in enumerate(result["data"]):
                             st.markdown(f"### 🖼️ 이미지 {i + 1}")
 
-                            # Display image
+                            # Extract base URL without query parameters
+                            image_url = img_data["url"].split("?")[0]
+
+                            # Display image using the base URL
                             try:
-                                # Download image data first
-                                img_response = requests.get(img_data["url"])
-                                img_response.raise_for_status()
+                                st.image(image_url, use_container_width=True)
 
-                                # Store raw content for reuse
-                                img_content = img_response.content
-
-                                # Display image from fresh BytesIO
-                                img = Image.open(BytesIO(img_content))
-                                st.image(img, use_container_width=True)
-
-                                # Download button with new BytesIO instance
-                                img_bytes = BytesIO()
-                                img.save(img_bytes, format="PNG")
-                                img_bytes.seek(0)
-
+                                # Create download button that uses the base URL
                                 st.download_button(
                                     label=f"📥 이미지 {i + 1} 다운로드",
-                                    data=img_bytes,
+                                    data=image_url,
                                     file_name=f"glm_image_{i + 1}.png",
                                     mime="image/png",
                                     use_container_width=True,
@@ -295,13 +285,9 @@ if generate_btn:
 
                                 st.markdown("---")
 
-                            except requests.exceptions.RequestException as e:
-                                st.error(
-                                    f"이미지 다운로드 중 오류가 발생했습니다: {str(e)}"
-                                )
                             except Exception as e:
                                 st.error(
-                                    f"이미지 로드 중 오류가 발생했습니다: {str(e)}"
+                                    f"이미지 표시 중 오류가 발생했습니다: {str(e)}"
                                 )
 
                         # Show prompt used
