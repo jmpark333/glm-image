@@ -270,9 +270,17 @@ if generate_btn:
                             # Use the full URL with query parameters
                             image_url = img_data["url"]
 
-                            # Display image using the full URL
+                            # Download and display image
                             try:
-                                st.image(image_url, use_container_width=True)
+                                img_response = requests.get(image_url, timeout=30)
+                                if img_response.status_code == 200:
+                                    img = Image.open(BytesIO(img_response.content))
+                                    st.image(img, use_container_width=True)
+                                else:
+                                    st.error(
+                                        f"이미지 다운로드 실패 (상태 코드: {img_response.status_code})"
+                                    )
+                                    st.markdown(f"[직접 열기]({image_url})")
 
                                 # Create download button that shows the URL for manual download
                                 st.markdown(
@@ -296,6 +304,7 @@ if generate_btn:
                                 st.error(
                                     f"이미지 표시 중 오류가 발생했습니다: {str(e)}"
                                 )
+                                st.markdown(f"[직접 열기]({image_url})")
                                 st.markdown("---")
 
                         # Show prompt used
