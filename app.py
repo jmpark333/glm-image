@@ -87,7 +87,7 @@ with st.sidebar:
     st.markdown("---")
 
     # API Key info
-    st.info("""
+    st.markdown("""
     **📖 API Key 발급 방법**
 
     1️⃣ [https://z.ai](https://z.ai) 방문
