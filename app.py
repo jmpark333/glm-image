@@ -102,7 +102,6 @@ with st.sidebar:
     st.markdown("### 📚 GLM-Image 정보")
     st.markdown("""
     **GLM-Image**는 Z.AI가 개발한 하이브리드 이미지 생성 모델입니다.<br><br>
-
     🔹 **강점**: 텍스트 렌더링, 복잡한 레이아웃<br>
     🔹 **아키텍처**: Auto-regressive + Diffusion<br>
     🔹 **용도**: 포스터, PPT, 인포그래픽 등
