@@ -1,6 +1,6 @@
 # 🎨 GLM-Image Streamlit App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/jmpark333/glm-image)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://glm-image-gof4mhfmupt9uicd97heux.streamlit.app/)
 
 Z.AI의 **GLM-Image** API를 사용하여 텍스트에서 이미지를 생성하는 Streamlit 웹 애플리케이션입니다.
 
@@ -17,7 +17,7 @@ GLM-Image는 오픈소스 이미지 생성 모델로, 특히 **텍스트 렌더�
 
 ## 🚀 온라인 체험
 
-바로 사용해보세요: **[https://share.streamlit.io/jmpark333/glm-image](https://share.streamlit.io/jmpark333/glm-image)**
+바로 사용해보세요: **[https://glm-image-gof4mhfmupt9uicd97heux.streamlit.app/](https://glm-image-gof4mhfmupt9uicd97heux.streamlit.app/)**
 
 ## 📦 로컬에서 실행하기
 
